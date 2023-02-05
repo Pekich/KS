@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+Пример использования форм
+</title>
+
+<style>
+
+.main{
+  position: absolute;
+  text-align: center;
+  margin-left: 35%;
+  margin-top: 12%;
+  width: 500px;
+}
+.error{
+  position: absolute;
+  text-align: right;
+  width: auto;
+  white-space: nowrap;
+  padding-right: 100px;
+
+}
+
+</style>
+</head>
+<body style='background-image:url(b.png); background-size: cover; font-weight:bold; color:#FFF'>
+<!--  ===============================================================================================  -->
+
+
+<div class="main">
+<p class="error"> </p>
+<FORM ENCTYPE="application/x-www-form-urlencoded" method="POST" action="login.cgi">
+<!-- application/x-www-form-urlencoded  - кодирование по умолчанию, его можно не указывать -->
+
+<br><br>
+<br><br>
+<p>Login</p>
+<input type=text name=login>
+<br><br>
+<p>Password</p>
+<input type=password name=password>
+<!--<INPUT TYPE=file NAME="myfile" VALUE="здесь впишите имя файла" SIZE=25>
+<br> <br>-->
+<br><br>
+<INPUT TYPE=submit VALUE="OK - POST">
+
+</FORM>
+<div>
+<hr size=3>
+<!--  ===============================================================================================  -->
+
+</body>
+</html>

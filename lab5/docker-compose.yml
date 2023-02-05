@@ -1,0 +1,27 @@
+version: "3"
+networks:
+  net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.22.2.0/24
+
+services:
+  apache:
+    container_name: apache
+    restart: always
+    build:
+      context: "./context_apache"
+      dockerfile: Dockerfile
+      args:
+        # если у вас линукс укажите здесь UID своего пользователя
+        # можно узнать командой id -u  и  id -g
+        UID: 1000
+        GID: 1000
+    volumes:
+      - ./www:/www
+      - ./www:/usr/local/apache2/htdocs
+      - ./apache2_conf:/usr/local/apache2/conf
+    networks:
+      net:
+        ipv4_address: 172.22.2.20
